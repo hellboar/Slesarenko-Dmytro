@@ -1,0 +1,481 @@
+$mainColor:#66FCF1;
+$blackColor:#1F2833;
+$greyColor:#C7C7C7;
+$oceanColor:#45A29E;
+$colorText:#5F6D78;
+$fafaColor:#FAFAFA;
+$semiBlack:#1F2833;
+/**** RESET STYLES ****/
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'GothamPro-Regular';
+    font-size: 18px;
+}
+ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+a{
+    text-decoration: none;
+    color:#101010;
+}
+/**** END ****/
+
+body{
+	background-color:white;
+}
+header{
+	 box-shadow: 0px 1px 6px 2px rgba(0,0,0,0.16);
+	 background: white;
+	position: fixed;
+	left:0;
+	right: 0;
+	z-index: 3;
+
+}
+.wrapper{
+	width:1300px;
+	margin:0 auto;
+	//border:1px solid black;
+	height:100px;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	transition:0.18s;
+
+
+}
+
+.wrapper_active{
+	height: 140px;
+	transition:0.18s;
+	align-items:flex-start;
+}
+
+.logo{
+	
+	letter-spacing:3.75px;
+
+	a{
+	font-family: 'GothamPro-Black';
+	font-size: 25px;
+	color:$mainColor;
+	}
+	
+}
+.change-lang{
+	color:$blackColor;
+	font-size: 23px;
+	transition:all 0.18s easy; 
+    transition-duration:0.18s;
+	&:hover{
+		color:$mainColor;
+
+	}
+}
+
+.main_menu{
+	position:fixed;
+	top:81px;
+	display: flex;
+	width:100%;
+	justify-content:center;
+	opacity: 0;
+	z-index: 4;
+	ul{
+		font-size: 0;
+		//border: 1px solid black;
+		li{
+			display: inline-block;
+			margin-right: 54px;
+			&:last-child{
+				margin-right: 0px;
+			}
+			a{
+				font-size: 25px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+.active_menu{
+	opacity: 100;
+	transition:0.18s;
+}
+
+
+/*КНОПКА*/
+.menu-btn{
+    position: relative;
+    display: block;
+    height: 25px;
+    width: 38px;
+   // border: 1px solid black;	
+    span,span::after,span::before{
+	 position: absolute;
+     width: 36px;
+    height: 6px;
+    background-color: $mainColor;
+    top:43%;
+    display: block;
+	}
+	span::after,span::before{
+		 content: '';
+    transition: 0.18s;
+	}
+	span::before{
+		transform: translate(0px,-9px);
+	}
+	span::after{
+		transform: translate(0px,8px);
+	}
+	span{height: 0;}
+}
+.menu-btn-active{
+	transform:translateX(-3px);
+	margin-top:40px;
+
+	span::before{
+		transform: rotate(40deg);
+		width:38px;
+		
+	}
+	span::after{
+		transform: rotate(-40deg);
+		width:38px;
+		
+	}
+}
+/*КНОПКА*/
+
+
+/**** MAIN ****/
+main{
+	position: absolute;
+	top:155px;
+	left:0;
+	right: 0;
+}
+
+.wrapp_article{
+	width: 1300px;
+	margin:0 auto;
+	display: flex;
+	justify-content:space-between;
+//	border:1px solid black;
+	.section_share{
+		width: 245px;
+		.share_button{
+			position: sticky;
+			top:135px;
+			display: inline-block;
+		    //border: 1px solid black;
+		    border-radius: 15px;
+		  
+		    width: 245px;
+		    height: 64px;
+		   // margin-top: 5px;
+		    transition:0.33s all;
+		    &:hover{
+		    	  background-color: #F0F0F0;
+		    }
+		    .wrapper_ez{
+		    	display: flex;
+		    	width: 216px;
+		    	margin:0 auto;
+		    	height: 64px;
+		    	justify-content:space-between;
+		    	align-items:center;
+		    	img{
+		    		width: 46px;
+		    		height: 40px;
+		    	}
+		    	.send{
+		    		font-size: 25px;
+		    		letter-spacing: 1.25px;
+		    		color:$blackColor;
+		    	}
+		    }
+		}
+		
+		.secret{
+			display: none;
+			position: sticky;
+			z-index: 3;
+			top:120px;
+			margin-left: 256px;
+			margin-bottom: -241px;
+			margin-top:-18px;
+			width: 297px;
+			height: 259px;
+			background-color: white;
+			border-radius: 25px;
+			box-shadow: 0px 1px 6px 2px rgba(0,0,0,0.16);
+			.secret_wrapper{
+				width: 262px;
+				margin:0 auto;
+				padding-top: 24px;
+				.share_button_secret{
+				 margin-bottom: 19px;
+			     display: inline-block;
+		         //border: 1px solid black;
+		         border-radius: 15px;
+		         transition:0.33s all;
+		          &:hover{
+		    	  background-color: #F0F0F0;
+		          }
+		         width: 259px;
+		         height: 58px;
+		         //margin-top: 5px;
+		         .wrapper_ez{
+		    	display: flex;
+		    	width: 227px;
+		    	margin:0 auto;
+		    	height: 64px;
+		    	margin-top: -3px;
+		    	align-items:center;
+		    	     img{
+		    		width: 40px;
+		    		height: 34px;
+		    		margin-right: 14px;
+		    	     }
+		    	     .send{
+		    		font-size: 25px;
+		    		letter-spacing: 1.25px;
+		    		color:$blackColor;
+		    	     }
+		         }
+		       }     
+			}
+		}
+	}
+	.section_article{
+		width: 766px;
+		.img_article{
+			width: 766px;
+			height: 358px;
+			background-position: center;
+	        background-repeat: no-repeat;
+	        background-size: cover;
+	        margin-bottom: 34px;
+		}
+		.main_info
+		{
+			display: flex;
+			justify-content:space-between;
+			margin-bottom: 29px;
+			.date{
+				color:$colorText;
+				font-size: 20px;
+				letter-spacing: 1px;
+				font-family: 'GothamPro-Light';
+			}
+			.category{
+				text-transform: uppercase;
+				font-family: 'GothamPro-Light';
+				color:$colorText;
+				font-size: 20px;
+				letter-spacing: 1px;
+			}
+		}
+		h1{
+			font-family: 'GothamPro-Black';
+			font-size: 30px;
+			color:$mainColor;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			line-height: 1.40;
+			margin-bottom: 50px;
+		}
+		.main_text{
+			font-size: 20px;
+			line-height: 1.3;
+			letter-spacing: 1px;
+			color:$colorText;
+			margin-bottom: 40px;
+			
+		}
+		.mini-h{
+			padding-top:20px;
+			margin-bottom: 50px;
+			.line{
+				border-top:4px solid $mainColor;
+				width:47px;
+			}
+			h2{
+				margin-top: 14px;
+				font-size: 26px;
+				line-height: 1.35;
+				letter-spacing: 1.16px;
+				color:$mainColor;
+				font-family: 'GothamPro-Black';
+			}
+		}
+		.list{
+			padding-top: 10px;
+			p{
+				font-size: 20px;
+			line-height: 1.3;
+			letter-spacing: 1px;
+			color:$colorText;
+			margin-bottom: 32px;
+			}
+			ul{
+				margin-left: 65px;	
+				li{
+					list-style-type: disc;
+					font-size: 26px;
+					color:$mainColor;
+					margin-bottom: 29px;
+					&:last-child{
+						margin-bottom: 40px;
+					}
+					span{
+						font-size: 20px;
+						color: $blackColor;
+					}
+				}
+			}
+		}
+		.insert_img{
+			width: 766px;
+			height: 268px;
+			background-position: center;
+	        background-repeat: no-repeat;
+	        background-size: cover;
+	        margin-bottom: 40px;
+		}
+		.recomendation{
+		padding-top: 70px;
+		span{
+			color:$blackColor;
+			font-size: 24px;
+			letter-spacing: 1.3px;
+			font-family: 'GothamPro-Black';
+			a{
+				color:$colorText;
+				font-size: 24px;
+				font-family: 'GothamPro-Black';
+				letter-spacing: 1.3px;
+				line-height: 1.35;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	    }
+	}
+	.section_adss{
+		width: 222px;
+      
+	}
+
+}
+
+
+/**** END ****/
+
+/**** FOOTER ****/
+
+footer{
+	width: 100%;
+	background-color: #2D353F;
+	.wrapp_footer{
+		width: 1297px;
+		margin:0 auto;
+		padding-top: 52px;
+	}
+	margin-top: 103px;
+}
+.logoD{
+	font-family: 'GothamPro-Black';
+	font-size: 22px;
+	letter-spacing:3.75px;
+	color:$mainColor;
+	&:hover{
+		cursor: default;
+	}
+}
+.foot_line{
+	border-bottom: 4px solid $mainColor;
+	width: 45px;
+	margin-top: 15px;
+}
+
+.textus{
+	color:#C5C6C7;
+	margin-top: 34px;
+	line-height: 1.22;
+	letter-spacing: 0.9px;
+	width: 588px;
+}
+
+.contacts{
+	.logoD{
+		text-align: right;
+	}
+	.textus{
+		text-align: right;
+		margin-top:20px;
+	}
+}
+.flexing{
+	display: flex;
+	justify-content:space-between;
+	margin-bottom: 111px;
+}
+.copyright{
+	color:#C5C6C7;
+	letter-spacing: 2.7px;
+	text-align: center;
+	padding-bottom: 40px;
+}
+/**** END ****/
+
+
+
+
+
+/**** LINK FONTS ****/
+@font-face {
+font-family: "GothamPro-Light";  
+src: url("../fonts/GothamPro-Light.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+}
+
+@font-face {
+font-family: "GothamPro-Regular";  
+src: url("../fonts/GothamPro-Regular.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+}
+
+@font-face {
+font-family: "GothamPro-Medium";  
+src: url("../fonts/GothamPro-Medium.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+}
+
+@font-face {
+font-family: "GothamPro-Bold";  
+src: url("../fonts/GothamPro-Bold.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+}
+
+@font-face {
+font-family: "GothamPro-Black";  
+src: url("../fonts/GothamPro-Black.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+}
+
+
+/********************/
+
+
